@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana5.MainPage">
+
+    <StackLayout>
+        <Label Text="Consumir web service Get" FontSize="20" HorizontalTextAlignment="Center"> </Label>
+        <Label x:Name="texto" Text="Datos de los estudiantes"></Label>
+        <Grid Margin="0,2,4,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+             <Label Text="Id" FontSize="16" Grid.Row="0" Grid.Column="0"></Label>
+             <Label Text="Nombre" FontSize="16" Grid.Row="0" Grid.Column="1" ></Label>
+             <Label Text="Apellido"  FontSize="16" Grid.Row="0" Grid.Column="2" ></Label>
+        </Grid>
+       <Label Text="-------------------------------------------------------------------------------"></Label>
+        <ListView x:Name="MyListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>                          
+                           <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition> </RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            <Label x:Name="lblId" Grid.Row="0" Grid.Column="0" Text="{Binding codigo}"></Label>    
+                            <Label x:Name="lblNombre"  Grid.Row="0" Grid.Column="1" Text="{Binding nombre}"></Label>                    
+                            <Label x:Name="lblapellido" Grid.Row="0"  Grid.Column="2" Text="{Binding apellido}"></Label> 
+                        
+                            </Grid>
+</StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+           <Button Text="Consultar" x:Name="btnGet" Clicked="btnGet_Clicked"></Button>
+           <Button Text="Insertar" x:Name="btnInsertar" Clicked="btnInsertar_Clicked_1"></Button>
+    </StackLayout>
+
+</ContentPage>
+
